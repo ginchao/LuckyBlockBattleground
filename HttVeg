@@ -283,6 +283,9 @@ if ToEnable.FullBright then
     Lighting.Outlines = true
 end
 end)
+tgls:Button"Fling Punch", function()
+                                            loadstring(game:HttpGet("https://raw.githubusercontent.com/fedoratums/Base-Script/Base-Script/fedoratum punch fling",true))()
+end)
 local sldrs = serv:Channel("Nữ Chính")
 local sldr = sldrs:Slider("Speeds", 0, 1000, 400, function(v)
 
