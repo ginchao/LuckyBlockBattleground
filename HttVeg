@@ -1,6 +1,6 @@
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 local win = DiscordLib:Window("Htt Veg")
-local serv = win:Server("Lucky Block Battleground", "")
+local serv = win:Server("Lucky Block Battleground", "rbxassetid://4483345998")
 local tgls = serv:Channel("Main")
 tgls:Toggle("Auto-LuckyBlock",false, function(v)
 	getgenv().autoblock = v
