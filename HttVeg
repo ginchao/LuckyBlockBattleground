@@ -301,6 +301,9 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
 end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end)
+tgls:Button("F3x", function()
+loadstring(game:GetObjects("rbxassetid://6695644299")[1].Source)()
+end)
 local sldrs = serv:Channel("Walk Speed")
 local sldr = sldrs:Slider("Speeds", 0, 1000, 400, function(v)
 
@@ -363,7 +366,7 @@ game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
-local btns = serv:Channel("Script Khác")
+local btns = serv:Channel("Oder script")
       btns:Button("Infinite Yield", function() --działka--
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   end)
