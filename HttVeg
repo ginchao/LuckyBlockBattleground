@@ -398,5 +398,8 @@ btns:Button("Remote Spy", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Forked/M%3ASimpleSpy%20V3" ,true))()
 end)
 btns:Button("CCTV", function()
-https://raw.githubusercontent.com/GhostPlayer352/Test4/main/CCTV%20Camera
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/CCTV%20Camera"))();
+end)
+btns:Button("Invisible X Teleport", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
 end)
