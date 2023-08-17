@@ -366,8 +366,8 @@ game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
 end)
-local btns = serv:Channel("Oder script")
-      btns:Button("Infinite Yield", function() --działka--
+local btns = serv:Channel("Others Script")
+      btns:Button("Infinite Yield", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
   end)
 btns:Button("Anti Afk", function()
@@ -376,7 +376,7 @@ end)
 btns:Button("Keyboard", function()
 
                        loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
-    end)         --gị--
+    end)         
 btns:Button("FlyV3", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()--IlIlIllIIllIlIlIllIl--
        end)
@@ -397,7 +397,7 @@ end)
 btns:Button("Remote Spy", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Hosvile/Refinement/main/Forked/M%3ASimpleSpy%20V3" ,true))()
 end)
-btns:Button("CCTV", function()
+btns:Button("CCTV Camera", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/GhostPlayer352/Test4/main/CCTV%20Camera"))();
 end)
 btns:Button("Invisible X Teleport", function()
