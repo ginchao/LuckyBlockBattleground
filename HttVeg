@@ -403,3 +403,98 @@ end)
 btns:Button("Invisible X Teleport", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
 end)
+local win = DiscordLib:Window("Ginchao Hub")
+local serv = win:Server("VietNam Piece Beta", "")
+local drops = serv:Channel("Mob")
+drops:Toggle("Auto Bring NickBeo",false, function(v)
+getgenv().autobring = v
+while autobring == true do
+game:GetService("Workspace")["NPC DAMAGE"].NickBeo.HumanoidRootPart.CFrame
+ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+wait(0.2)
+end
+end)
+drops:Toggle("Auto Click Quest NickBeo",LocalPlayer, function(plr)
+getgenv().autoquest = plr
+while autoquest==true do
+fireclickdetector(game:GetService("Workspace")["NickBeo Island"]["Quest NickBeo"].Quest.ClickDetector)
+wait()
+end
+end)
+drops:Seperator()
+drops:Toggle("Auto Bring Tango",false, function(v)
+getgenv().autobring = v
+while autobring == true do
+game:GetService("Workspace")["NPC DAMAGE"].Tango.HumanoidRootPart.CFrame
+ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+wait(0.2)
+end
+end)
+drops:Toggle("Auto Click Quest Tango",LocalPlayer, function(plr)
+getgenv().autoquest = plr
+while autoquest==true do
+fireclickdetector(game:GetService("Workspace")["NickBeo Island"]["Quest Tango"].Quest.ClickDetector)
+wait()
+end
+end)
+drops:Seperator()
+drops:Toggle("Auto Bring Kaido",false, function(v)
+getgenv().autobring = v
+while autobring == true do
+game:GetService("Workspace")["NPC DAMAGE"].Kaidou.HumanoidRootPart.CFrame
+ = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+wait(0.2)
+end
+end)
+drops:Toggle("Auto Click Quest Kaido",LocalPlayer, function(plr)
+getgenv().autoquest = plr
+while autoquest==true do
+fireclickdetector(game:GetService("Workspace")["KAIDO ISLANDDDDDDDD"]["KAIDOUU QUESTTT"].ClickPart.ClickDetector)
+wait()
+end
+end)
+local drops = serv:Channel("Weapon")
+local Weaponlist = {}
+local Weapon = nil
+for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+table.insert(Weaponlist,v.Name)
+end
+local drop = drops:Dropdown("Pick", Weaponlist, function(currentOption)
+Weapon = currentOption
+end)
+drops:Toggle("Auto Equip",false, function(a)
+AutoEquiped = a
+end)
+spawn(function()
+while wait() do
+if AutoEquiped then
+pcall(function()
+game.Players.LocalPlayer.Character.Humanoid:EquipTool(game:GetService("Players").LocalPlayer.Backpack:FindFirstChild(Weapon))
+end)
+end
+end
+end)
+local btns = serv:Channel("Island")
+
+btns:Button("Kaido Island [2000]", function()
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-708.903564, 87687.7266, 809.050476, 0.312079072, -9.11389222e-08, 0.950056136, -5.59602764e-09, 1, 9.77682433e-08, -0.950056136, -3.58279628e-08, 0.312079072)
+end)
+btns:Button("Nickbeo Island [7000+]", function()
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-1622.85156, 87698.5469, 622.421936, -0.0521310531, -0, -0.998640239, -0, 1, -0, 0.998640239, 0, -0.0521310531)
+end)
+btns:Button("Marine Island [3000-7000]", function()
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-152.420593, 87740.3125, -2115.33057, -0.995318413, 0, 0.0966506973, 0, 1, -0, -0.0966507122, 0, -0.995318294)
+end)
+btns:Button("Platinum Town [2000-3000]", function()
+local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+rootPart.CFrame = CFrame.new(-1280.56299, 87693.3281, 3242.69702, -0.0239899773, -0, -0.999712229, -0, 1, -0, 0.999712229, 0, -0.0239899773)
+end)
+btns:Toggle("AutoClickGodBox",false, function(e)
+while wait() do
+fireclickdetector(game:GetService("Workspace")["Platinum Town [ 2000 - 3000 ]"].PlatinumMAP.GodBox.ClickDetector)
+end
+end)
+btns:Label("Can't Stop")
