@@ -403,7 +403,7 @@ end)
 btns:Button("Invisible X Teleport", function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe./dbb6ce6f6cee4f7a5c9e20d7b88e83db2a93bf25/Invisible%20GUI'))()
 end)
-local serv = win:Server("VietNam Piece Beta", "")
+local serv = win:Server("VietNam Piece Second Sea [Beta]", "")
 local drops = serv:Channel("Mob")
 drops:Toggle("Auto Bring NickBeo",false, function(v)
 getgenv().autobring = v
