@@ -16,14 +16,6 @@ game:GetService("ReplicatedStorage"):WaitForChild("SpawnSuperBlock"):FireServer(
  wait(0.5)
    end
          end)
-
-
-
-
-
-
-
-
 tgls:Toggle("Auto-DiamondBlock",false, function(v)
 	getgenv().autoblock = v
 		while autoblock==true do
@@ -87,8 +79,7 @@ local Playerlist = {}
 for i, v in pairs(game.Players:GetChildren()) do
 table.insert(Playerlist, v.Name)
 end
-local drops = serv:Channel("Teleport Player")
-local drop = drops:Dropdown("Pick", Playerlist, function(bool)
+tgls:Dropdown("Pick", Playerlist, function(bool)
 local SeclectedPlayer = bool
 for i, v in pairs(game.Workspace:GetChildren()) do
 if v.Name == SeclectedPlayer then
@@ -97,9 +88,6 @@ end
 end
 end)
 tgls:Toggle("EspName",false, function(v)
-
-
-
 local esp_settings = { 
     textsize = 12,
     colour = 255,255,255
@@ -107,9 +95,6 @@ local esp_settings = {
  
 local gui = Instance.new("BillboardGui")
 local esp = Instance.new("TextLabel",gui)
-
-
- 
 gui.Name = "Cracked esp";
 gui.ResetOnSpawn = false
 gui.AlwaysOnTop = true;
