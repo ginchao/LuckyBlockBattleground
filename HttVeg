@@ -28,7 +28,7 @@ tgls:Toggle("Auto-RainbowBlock",false, function(v)
 		while autoblock==true do
 game:GetService("ReplicatedStorage"):WaitForChild("SpawnRainbowBlock"):FireServer()
 wait(0.5)
-                           end--991--
+                           end
 end)
 tgls:Toggle("Auto-GalaxyBlock",false, function(v)
 	getgenv().autoblock = v
@@ -72,20 +72,38 @@ end
                         end)
   end)
 local tgls = serv:Channel("Player")
-local plr = game.Players.LocalPlayer
-local char = plr.Character or plr.Character:AddedWait()
-local hp = char.HumanoidRootPart
-local Playerlist = {}
+local plrlist = {}
+local plr = nil
+for i, v in pairs(game:GetService("Players"):GetChildren()) do
+table.insert(plrlist,v.Name)
+end
+local drop = tgls:Dropdown("Choose Player", plrlist, function(m)
+for i, b in pairs(game:GetService("Workspace"):GetChildren()) do
+if m == b.name then
+plr = m
+end
+end
+end)
+tgls:Button("Refresh Player", function()
+drop:Clear()
 for i, v in pairs(game.Players:GetChildren()) do
-table.insert(Playerlist, v.Name)
-end
-tgls:Dropdown("Pick", Playerlist, function(bool)
-local SeclectedPlayer = bool
-for i, v in pairs(game.Workspace:GetChildren()) do
-if v.Name == SeclectedPlayer then
-hp.CFrame = game.Workspace:FindFirstChild(""..SeclectedPlayer).HumanoidRootPart.CFrame
+if v:IsA("Player") then
+drop:Add(v.Name)
 end
 end
+end)
+tgls:Button("Teleport Player", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame
+end)
+tgls:Toggle("Auto Teleport",false, function(t)
+getgenv().autotele = t
+spawn(function()
+while autotele do wait()
+pcall(function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame wait()
+end)
+end
+end)
 end)
 tgls:Toggle("EspName",false, function(v)
 local esp_settings = { 
@@ -294,7 +312,7 @@ tgls:Button("Teleport Tool", function()
 mouse = game.Players.LocalPlayer:GetMouse()
 tool = Instance.new("Tool")
 tool.RequiresHandle = false
-tool.Name = "Teleport Tool"
+tool.Name = "TeleTool"
 tool.Activated:connect(function()
 local pos = mouse.Hit+Vector3.new(0,2.5,0)
 pos = CFrame.new(pos.X,pos.Y,pos.Z)
