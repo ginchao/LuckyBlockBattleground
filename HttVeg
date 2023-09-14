@@ -93,9 +93,16 @@ end
 end
 end)
 tgls:Button("Teleport Player", function()
+if plr == nil then 
+ DiscordLib:Notification("Warning", "Choose Weapon to AutoEquip", "Ok") 
+ elseif plr ~= nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame
+end
 end)
 tgls:Toggle("Auto Teleport",false, function(t)
+if plr == nil then 
+ DiscordLib:Notification("Warning", "Choose Weapon to AutoEquip", "Ok") 
+ elseif plr ~= nil then
 getgenv().autotele = t
 spawn(function()
 while autotele do wait()
@@ -104,6 +111,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr]
 end)
 end
 end)
+end
 end)
 tgls:Toggle("EspName",false, function(v)
 local esp_settings = { 
