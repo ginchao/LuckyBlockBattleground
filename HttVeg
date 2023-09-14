@@ -94,7 +94,7 @@ end
 end)
 tgls:Button("Teleport Player", function()
 if plr == nil then 
- DiscordLib:Notification("Warning", "Choose Weapon to AutoEquip", "Ok") 
+ DiscordLib:Notification("Warning", "Choose Player to Teleport", "Ok") 
  elseif plr ~= nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame
 end
