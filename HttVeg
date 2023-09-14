@@ -180,6 +180,23 @@ billboard_guiClone.Parent = v.Character:FindFirstChild("Head")
 end
 end
 end)
+local inf = nil
+tgls:Toggle("Infnite Jump", false, function(v)
+if inf then inf:Disconnect() end
+getgenv().infi = v
+local Player = game.Players.LocalPlayer
+if infi ~= inf then
+inf = game.UserInputService.JumpRequest:Connect(function()
+if infi == false then inf:Disconnect() end
+    Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+wait()
+end)
+end
+end)
+
+
+
+
 Players.PlayerAdded:Connect(function(player)
 if not player.Character.Head:FindFirstChild("nameESP") or player == game.Players.LocalPlayer then
 local billboard_guiClone = billboard_gui:Clone()
