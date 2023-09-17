@@ -357,7 +357,7 @@ tgls:Button("Reset Character", function()
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 local sldrs = serv:Channel("Walk Speed")
-local sldr = sldrs:Slider("Speeds", 0, 1000, 400, function(v)
+local sldr = sldrs:Slider("Speeds", 0, 1000, 0, function(v)
 
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
 end)
@@ -379,7 +379,7 @@ end)
 sldrs:Button("Speed 30", function()
 sldr:Change(30)
 end)
-local sldr = sldrs:Slider("Jumps", 0, 1000, 400, function(v)
+local sldr = sldrs:Slider("Jumps", 0, 1000, 0, function(v)
 
 game.Players.LocalPlayer.Character.Humanoid.JumpPower = v
 end)
@@ -398,7 +398,7 @@ end)
 sldrs:Button("Jump 70", function()
 sldr:Change(70)
 end)
-local sldr = sldrs:Slider("height", 0, 200, 200, function(v)
+local sldr = sldrs:Slider("height", 0, 100, 0, function(v)
 game.Players.LocalPlayer.Character.Humanoid.HipHeight = v
 end)
 sldrs:Button("height 100", function()
