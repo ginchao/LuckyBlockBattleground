@@ -99,7 +99,7 @@ if plr == nil then
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame
 end
 end)
-drops:Toggle("Spectate Player",false, function(h) 
+tgls:Toggle("Spectate Player",false, function(h) 
  if plr == nil then 
  DiscordLib:Notification("Warning", "Choose Player to Super Ultra Skill, Need Loadmap", "Ok") 
  elseif plr ~= nil then 
