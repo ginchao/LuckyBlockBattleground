@@ -96,7 +96,7 @@ tgls:Button("Teleport Player", function()
 if plr == nil then 
  DiscordLib:Notification("Warning", "Choose Player to Teleport", "Ok") 
  elseif plr ~= nil then
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame
 end
 end)
 tgls:Toggle("Spectate Player",false, function(h) 
@@ -122,7 +122,7 @@ getgenv().autotele = t
 spawn(function()
 while autotele do wait()
 pcall(function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace[plr].HumanoidRootPart.CFrame wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[plr].Character.HumanoidRootPart.CFrame wait()
 end)
 end
 end)
